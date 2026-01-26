@@ -33,15 +33,17 @@
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(2px 2px at 20% 30%, var(--shimmer-blue), transparent),
-        radial-gradient(2px 2px at 60% 70%, var(--shimmer-violet), transparent),
-        radial-gradient(1px 1px at 50% 50%, var(--shimmer-light), transparent),
-        radial-gradient(1px 1px at 80% 10%, var(--shimmer-accent), transparent),
-        radial-gradient(2px 2px at 90% 60%, var(--shimmer-blue), transparent),
-        radial-gradient(1px 1px at 33% 80%, var(--shimmer-violet), transparent);
+        radial-gradient(3px 3px at 20% 30%, var(--shimmer-blue), transparent),
+        radial-gradient(3px 3px at 60% 70%, var(--shimmer-violet), transparent),
+        radial-gradient(2px 2px at 50% 50%, var(--shimmer-light), transparent),
+        radial-gradient(2px 2px at 80% 10%, var(--shimmer-accent), transparent),
+        radial-gradient(3px 3px at 90% 60%, var(--shimmer-blue), transparent),
+        radial-gradient(2px 2px at 33% 80%, var(--shimmer-violet), transparent),
+        radial-gradient(2px 2px at 15% 60%, var(--shimmer-light), transparent),
+        radial-gradient(3px 3px at 70% 20%, var(--shimmer-violet), transparent);
     background-size: 200% 200%;
     background-position: 0% 0%;
-    opacity: 0.4;
+    opacity: 0.7;
     animation: shimmerFloat 20s ease-in-out infinite;
 }
 
