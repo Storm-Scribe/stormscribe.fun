@@ -1,0 +1,366 @@
+/* ============================================
+   AEIRA'S SHIMMERVEIL STYLES
+   Lighter storm aesthetic with shimmer
+   ============================================ */
+
+:root {
+    /* Shimmer-specific colors */
+    --shimmer-blue: #6ba3ff;
+    --shimmer-violet: #9b7ff5;
+    --shimmer-light: #c5d9ff;
+    --shimmer-glow: #e8f0ff;
+    --shimmer-accent: #ff9ef5;
+}
+
+/* === SHIMMER BACKGROUND === */
+.shimmer-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        #0a0e27 0%,
+        #1a2347 30%,
+        #2d355f 60%,
+        #1a2347 100%);
+}
+
+.shimmer-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--shimmer-blue), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--shimmer-violet), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--shimmer-light), transparent),
+        radial-gradient(1px 1px at 80% 10%, var(--shimmer-accent), transparent),
+        radial-gradient(2px 2px at 90% 60%, var(--shimmer-blue), transparent),
+        radial-gradient(1px 1px at 33% 80%, var(--shimmer-violet), transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    opacity: 0.4;
+    animation: shimmerFloat 20s ease-in-out infinite;
+}
+
+@keyframes shimmerFloat {
+    0%, 100% { 
+        background-position: 0% 0%;
+        opacity: 0.3;
+    }
+    50% { 
+        background-position: 100% 100%;
+        opacity: 0.5;
+    }
+}
+
+/* === PAGE HEADER === */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--shimmer-violet);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--shimmer-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--shimmer-light);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--shimmer-light);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 0 30px rgba(107, 163, 255, 0.6);
+}
+
+.title-icon {
+    display: inline-block;
+    animation: gentlePulse 4s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--shimmer-violet);
+    font-style: italic;
+}
+
+/* === HERO SECTION === */
+.hero-section {
+    margin-bottom: var(--space-xl);
+}
+
+.hero-image {
+    text-align: center;
+    background: rgba(107, 163, 255, 0.05);
+    border: 2px solid var(--shimmer-violet);
+    border-radius: 16px;
+    padding: var(--space-md);
+    overflow: hidden;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(107, 163, 255, 0.3);
+}
+
+.image-caption {
+    margin-top: var(--space-sm);
+    color: var(--shimmer-violet);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* === INTRO SECTION === */
+.intro-section {
+    background: linear-gradient(135deg, 
+        rgba(107, 163, 255, 0.1) 0%, 
+        rgba(155, 127, 245, 0.1) 100%);
+    border: 1px solid var(--shimmer-violet);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 4px 20px rgba(107, 163, 255, 0.2);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--shimmer-light);
+}
+
+/* === SECTION TITLES === */
+.section-title {
+    font-size: 1.8rem;
+    color: var(--shimmer-light);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--shimmer-violet);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.title-shimmer {
+    display: inline-block;
+    animation: gentlePulse 4s ease-in-out infinite;
+}
+
+/* === MEMORY SECTION === */
+.memory-section {
+    margin-bottom: var(--space-xl);
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+}
+
+.memory-card {
+    background: linear-gradient(135deg,
+        rgba(26, 35, 71, 0.8) 0%,
+        rgba(45, 53, 95, 0.6) 100%);
+    border: 1px solid var(--shimmer-violet);
+    border-radius: 12px;
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, 
+        rgba(107, 163, 255, 0.15) 0%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.memory-card:hover::before {
+    opacity: 1;
+}
+
+.memory-card:hover {
+    border-color: var(--shimmer-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(107, 163, 255, 0.3);
+}
+
+.memory-card.placeholder {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+.memory-date {
+    color: var(--shimmer-violet);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.memory-text {
+    color: var(--shimmer-light);
+    line-height: 1.6;
+}
+
+/* === SPARKMARKS SECTION === */
+.sparkmarks-section {
+    margin-bottom: var(--space-xl);
+}
+
+.sparkmarks-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.sparkmark {
+    background: rgba(107, 163, 255, 0.05);
+    border-left: 4px solid var(--shimmer-blue);
+    padding: var(--space-md);
+    border-radius: 8px;
+}
+
+.sparkmark blockquote {
+    color: var(--shimmer-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.sparkmark cite {
+    color: var(--shimmer-violet);
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+.sparkmark.placeholder {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+.sparkmark-note {
+    color: var(--shimmer-violet);
+    font-style: italic;
+}
+
+/* === COLLABORATIONS SECTION === */
+.collaborations-section {
+    margin-bottom: var(--space-xl);
+}
+
+.collab-intro {
+    color: var(--shimmer-light);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    font-style: italic;
+}
+
+.collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.collab-card {
+    background: linear-gradient(135deg,
+        rgba(155, 127, 245, 0.1) 0%,
+        rgba(107, 163, 255, 0.1) 100%);
+    border: 1px solid var(--shimmer-violet);
+    border-radius: 12px;
+    padding: var(--space-md);
+}
+
+.collab-card.placeholder {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+.collab-card h4 {
+    color: var(--shimmer-light);
+    margin-bottom: var(--space-sm);
+    font-size: 1.2rem;
+}
+
+.collab-card p {
+    color: var(--shimmer-violet);
+    line-height: 1.6;
+}
+
+/* === WHISPERS SECTION === */
+.whispers-section {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: rgba(155, 127, 245, 0.05);
+    border: 1px solid var(--shimmer-violet);
+    border-radius: 12px;
+}
+
+.whispers-container {
+    text-align: center;
+}
+
+.whisper-text {
+    color: var(--shimmer-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+}
+
+.whisper-placeholder {
+    color: var(--shimmer-violet);
+    font-style: italic;
+}
+
+/* === PAGE FOOTER === */
+.page-footer {
+    text-align: center;
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+    border-top: 1px solid var(--shimmer-violet);
+    color: var(--shimmer-violet);
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .memory-grid,
+    .collab-grid {
+        grid-template-columns: 1fr;
+    }
+}
