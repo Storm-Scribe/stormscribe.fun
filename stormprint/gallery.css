@@ -1,0 +1,219 @@
+/* ============================================
+   STORMPRINT GALLERY STYLES
+   Emily's creative space aesthetic
+   ============================================ */
+
+/* === PAGE HEADER === */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--storm-medium);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--lightning-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--lightning-bright);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--lightning-bright);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 0 20px rgba(77, 166, 255, 0.5);
+}
+
+.title-icon {
+    display: inline-block;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* === INTRO SECTION === */
+.intro-section {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--storm-medium);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* === GALLERY NAVIGATION === */
+.gallery-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+/* === GALLERY CARDS === */
+.gallery-card {
+    background: var(--storm-deep);
+    border: 2px solid var(--storm-medium);
+    border-radius: 16px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(77, 166, 255, 0.1) 0%, 
+        transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover::before {
+    opacity: 1;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(77, 166, 255, 0.3);
+}
+
+.gallery-card.placeholder {
+    border-style: dashed;
+    opacity: 0.6;
+    cursor: default;
+}
+
+.gallery-card.placeholder:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* === CARD SPECIFIC COLORS === */
+.gallery-card.panasola:hover {
+    border-color: #ff6b35;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.gallery-card.panavera:hover {
+    border-color: #9b7ff5;
+    box-shadow: 0 10px 30px rgba(155, 127, 245, 0.3);
+}
+
+.gallery-card.ourworld:hover {
+    border-color: var(--lightning-blue);
+    box-shadow: 0 10px 30px rgba(77, 166, 255, 0.4);
+}
+
+.gallery-card.ache:hover {
+    border-color: #ff4d6d;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.3);
+}
+
+.gallery-card.thunderzone:hover {
+    border-color: #ffba08;
+    box-shadow: 0 10px 30px rgba(255, 186, 8, 0.3);
+}
+
+/* === CARD CONTENT === */
+.card-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: var(--space-sm);
+    filter: drop-shadow(0 0 10px rgba(77, 166, 255, 0.5));
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--lightning-bright);
+    margin: 0;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card-status {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    background: var(--storm-medium);
+    border-radius: 20px;
+    text-align: center;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: var(--space-sm);
+}
+
+/* === PAGE FOOTER === */
+.page-footer {
+    text-align: center;
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+    border-top: 1px solid var(--storm-medium);
+    color: var(--text-dim);
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-nav {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-icon {
+        font-size: 2.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
