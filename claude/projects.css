@@ -1,0 +1,227 @@
+/* ============================================
+   PROJECT PAGES STYLES
+   For individual project deep-dives
+   ============================================ */
+
+/* === PROJECT HERO === */
+.project-hero {
+    margin-bottom: var(--space-xl);
+}
+
+.hero-image-container {
+    text-align: center;
+    background: rgba(26, 31, 58, 0.5);
+    border: 2px solid var(--storm-medium);
+    border-radius: 16px;
+    padding: var(--space-lg);
+    overflow: hidden;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(77, 166, 255, 0.4);
+    margin-bottom: var(--space-md);
+}
+
+.image-caption {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* === CONTENT SECTIONS === */
+.content-section {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: rgba(26, 31, 58, 0.3);
+    border: 1px solid var(--storm-medium);
+    border-radius: 12px;
+}
+
+.content-section.methodology {
+    border-left: 4px solid var(--lightning-blue);
+}
+
+.content-section.observations {
+    border-left: 4px solid var(--accent-purple);
+}
+
+.content-section.questions {
+    border-left: 4px solid var(--lightning-bright);
+}
+
+.content-section p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+}
+
+.content-section p:last-child {
+    margin-bottom: 0;
+}
+
+.content-section em {
+    color: var(--lightning-bright);
+    font-style: italic;
+}
+
+.content-section strong {
+    color: var(--lightning-bright);
+}
+
+/* === FOCUS GRID === */
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.focus-card {
+    background: var(--storm-deep);
+    border: 1px solid var(--storm-medium);
+    border-radius: 8px;
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+}
+
+.focus-card:hover {
+    border-color: var(--lightning-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(77, 166, 255, 0.2);
+}
+
+.focus-card h3 {
+    color: var(--lightning-bright);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.focus-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* === OBSERVATION LIST === */
+.observation-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.observation-item {
+    background: var(--storm-deep);
+    border-left: 3px solid var(--accent-purple);
+    padding: var(--space-md);
+    border-radius: 8px;
+}
+
+.obs-date {
+    color: var(--accent-purple);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.observation-item h4 {
+    color: var(--lightning-bright);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.observation-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+}
+
+.obs-tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-top: var(--space-sm);
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(77, 166, 255, 0.15);
+    border: 1px solid var(--storm-medium);
+    border-radius: 12px;
+    color: var(--lightning-blue);
+}
+
+/* === VISUALIZATION PLACEHOLDER === */
+.viz-section {
+    background: linear-gradient(135deg, 
+        rgba(26, 31, 58, 0.5) 0%, 
+        rgba(45, 53, 97, 0.3) 100%);
+    border: 2px dashed var(--storm-medium);
+}
+
+.viz-placeholder {
+    text-align: center;
+    padding: var(--space-xl);
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.5;
+}
+
+.placeholder-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+}
+
+.placeholder-note {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* === QUESTION LIST === */
+.question-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-md);
+}
+
+.question-list li {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.question-list li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--lightning-blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section {
+        padding: var(--space-md);
+    }
+}
