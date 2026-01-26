@@ -1,0 +1,245 @@
+/* ============================================
+   STORMSCRIBE STYLES
+   Dark storm aesthetic with electric accents
+   ============================================ */
+
+/* === BASE STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color palette - storm themed */
+    --storm-dark: #0a0e27;
+    --storm-deep: #1a1f3a;
+    --storm-medium: #2d3561;
+    --lightning-blue: #4da6ff;
+    --lightning-bright: #80c9ff;
+    --text-light: #e8e8e8;
+    --text-dim: #a0a0a0;
+    --accent-purple: #6b4ce6;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--storm-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* === STORM BACKGROUND EFFECTS === */
+.storm-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, 
+        var(--storm-dark) 0%, 
+        var(--storm-deep) 50%, 
+        var(--storm-medium) 100%);
+}
+
+/* Lightning flash animation - subtle and random */
+.lightning-flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: radial-gradient(circle at 50% 20%, 
+        rgba(77, 166, 255, 0.1) 0%, 
+        transparent 50%);
+    animation: lightning 15s infinite;
+}
+
+@keyframes lightning {
+    0%, 100% { opacity: 0; }
+    45% { opacity: 0; }
+    46% { opacity: 0.3; }
+    47% { opacity: 0; }
+    48% { opacity: 0.4; }
+    49% { opacity: 0; }
+    50%, 100% { opacity: 0; }
+}
+
+/* === MAIN CONTAINER === */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* === HEADER === */
+.site-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.site-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--lightning-bright);
+    text-shadow: 0 0 20px rgba(77, 166, 255, 0.5);
+    letter-spacing: -0.02em;
+}
+
+.storm-icon {
+    display: inline-block;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.storm-icon:first-child {
+    animation-delay: 0s;
+}
+
+.storm-icon:last-child {
+    animation-delay: 1.5s;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.site-tagline {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* === NAVIGATION === */
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--storm-deep);
+    border: 2px solid var(--storm-medium);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(77, 166, 255, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover {
+    border-color: var(--lightning-blue);
+    background: var(--storm-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(77, 166, 255, 0.3);
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+}
+
+.nav-text {
+    font-weight: 500;
+}
+
+/* === INTRO SECTION === */
+.intro {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: rgba(26, 31, 58, 0.5);
+    border-radius: 12px;
+    border: 1px solid var(--storm-medium);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+}
+
+.age-warning {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* === FOOTER === */
+.site-footer {
+    text-align: center;
+    padding-top: var(--space-lg);
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-nav {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: var(--space-md) var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+}
