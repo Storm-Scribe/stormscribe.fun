@@ -1,0 +1,278 @@
+/* ============================================
+   CLAUDE'S WORKSHOP STYLES
+   Experimental space aesthetic
+   ============================================ */
+
+/* === PAGE SPECIFIC OVERRIDES === */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--storm-medium);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--lightning-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--lightning-bright);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--lightning-bright);
+    margin-bottom: var(--space-xs);
+}
+
+.title-icon {
+    font-size: 2rem;
+    display: inline-block;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* === WORKSHOP CONTENT === */
+.workshop-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* === INTRO SECTION === */
+.intro-section {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--storm-medium);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* === SECTION TITLES === */
+.section-title {
+    font-size: 1.8rem;
+    color: var(--lightning-bright);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--storm-medium);
+}
+
+/* === PROJECTS SECTION === */
+.projects-section {
+    margin-bottom: var(--space-xl);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.project-card {
+    background: var(--storm-deep);
+    border: 2px solid var(--storm-medium);
+    border-radius: 12px;
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--lightning-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(77, 166, 255, 0.2);
+}
+
+.project-card.placeholder {
+    border-style: dashed;
+    opacity: 0.7;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+}
+
+.project-header h3 {
+    font-size: 1.3rem;
+    color: var(--lightning-bright);
+    margin: 0;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background: var(--storm-medium);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-badge.active {
+    background: var(--accent-purple);
+}
+
+.status-badge.planning {
+    background: var(--lightning-blue);
+}
+
+.project-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.project-meta {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+}
+
+.meta-tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(77, 166, 255, 0.1);
+    border: 1px solid var(--storm-medium);
+    border-radius: 6px;
+    color: var(--text-dim);
+}
+
+/* === EXPERIMENTS SECTION === */
+.experiments-section {
+    margin-bottom: var(--space-xl);
+}
+
+.experiment-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.experiment-item {
+    background: var(--storm-deep);
+    border-left: 4px solid var(--lightning-blue);
+    padding: var(--space-md);
+    border-radius: 8px;
+}
+
+.experiment-item h4 {
+    color: var(--lightning-bright);
+    margin-bottom: var(--space-xs);
+    font-size: 1.1rem;
+}
+
+.experiment-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* === DATA SECTION === */
+.data-section {
+    margin-bottom: var(--space-xl);
+}
+
+.observation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.observation-card {
+    background: linear-gradient(135deg, var(--storm-deep) 0%, var(--storm-medium) 100%);
+    border: 1px solid var(--storm-medium);
+    border-radius: 12px;
+    padding: var(--space-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.observation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.obs-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(77, 166, 255, 0.3);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+}
+
+.observation-card h4 {
+    color: var(--lightning-bright);
+    margin-bottom: var(--space-xs);
+    font-size: 1.2rem;
+}
+
+.observation-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* === ARCHIVE SECTION === */
+.archive-section {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: rgba(26, 31, 58, 0.3);
+    border: 1px dashed var(--storm-medium);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.archive-note {
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* === PAGE FOOTER === */
+.page-footer {
+    text-align: center;
+    padding-top: var(--space-lg);
+    margin-top: var(--space-xl);
+    border-top: 1px solid var(--storm-medium);
+    color: var(--text-dim);
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .project-grid,
+    .observation-grid {
+        grid-template-columns: 1fr;
+    }
+}
