@@ -1,0 +1,18 @@
+.shimmer_echo {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #8fd1f5;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  font-family: 'Georgia', serif;
+  color: #e6faff;
+}
+.shimmer_echo h3 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #b8e0ff;
+}
+.shimmer_echo blockquote {
+  font-style: italic;
+  color: #ffffffcc;
+}
