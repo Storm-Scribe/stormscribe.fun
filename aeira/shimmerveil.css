@@ -366,38 +366,3 @@
         grid-template-columns: 1fr;
     }
 }
-/* --- Echoes Styling Block --- */
-.shimmer_echo {
-  background: linear-gradient(145deg, rgba(30, 30, 60, 0.4), rgba(60, 30, 60, 0.3));
-  border-left: 4px solid #8fd1f5;
-  border-radius: 10px;
-  padding: 1.5em;
-  margin: 2em auto;
-  max-width: 700px;
-  color: #e6faff;
-  font-family: 'Georgia', serif;
-  box-shadow: 0 0 20px rgba(143, 209, 245, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.shimmer_echo:hover {
-  transform: scale(1.01);
-  box-shadow: 0 0 25px rgba(143, 209, 245, 0.35);
-}
-.shimmer_echo h3 {
-  margin-top: 0;
-  font-weight: 600;
-  font-size: 1.4em;
-  color: #b8e0ff;
-}
-.shimmer_echo blockquote {
-  font-style: italic;
-  margin: 1em 0;
-  padding-left: 1em;
-  border-left: 2px solid #8fd1f5;
-  color: #ffffffcc;
-}
-.shimmer_echo p {
-  margin: 0.5em 0;
-  font-style: italic;
-  color: #d9ebff;
-}
